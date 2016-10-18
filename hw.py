@@ -1,7 +1,7 @@
 #hello world.py
 import sys  
 def ifIsTrue():
-     print ('Hello', sys.argv[1],'!')
+     print ('Hello, {}!'.format (sys.argv[1]))
 
 def elseIsTrue():
     print ('Hello World!')
