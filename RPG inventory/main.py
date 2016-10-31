@@ -1,5 +1,5 @@
 inv = {'rope': 1, 'torch': 6, 'gold coin': 42, 'dagger': 1, 'arrow': 12}
-dragon_loot = ['gold coin', 'dagger', 'gold coin', 'gold coin', 'ruby']
+dragon_loot = ['gold coin', 'dagger', 'gold coin', 'gold coin', 'ruby', 'dragon meat']
 
 
 
@@ -24,6 +24,52 @@ def add_to_inventory(inventory,added_items):
         else:
             inv.update({k:1})
        
+def print_table():
+
+    keyLength = 0
+    valueLength = 0
+
+    for k, v in inv.items():
+
+        if valueLength < len(str(v)):
+            valueLength = len(str(v))
+
+        if keyLength < len(str(k)):
+            keyLength = len(str(k))
+
+    keyLength = int(keyLength)
+    
+
+    for k, v in inv.items():
+
+        a_v_len = (int(len(str(v))))
+        a_k_len = (int(len(str(k))))
+
+        frontspaces=(valueLength-a_v_len)
+        spaces=(keyLength-a_k_len)
+        dashes = valueLength + keyLength + spaces + frontspaces + 10 + 5
+
+    print("-"*dashes)        
+    for k, v in inv.items():
+        
+        print(" "*10 ," "*frontspaces, v," "*5, " "*spaces, k)
+    print("-"*dashes)
+        
+    
+
+
+
+    '''
+    print(type(keyLength))
+    print(type(valueLength))
+    print(type(a_v_len))
+    print(type(a_k_len))
+    '''
+
+        #
+
+    #print("longest: ", keyLength)
+    
         
 
     
@@ -40,5 +86,6 @@ while True:
         display_inventory(action)
     if action == "A":
         add_to_inventory(inv, dragon_loot)
-    elif action == "t":
-        print(inv['gold coin'])
+    elif action == "O":
+        print_table()
+        
