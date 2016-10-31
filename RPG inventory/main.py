@@ -11,11 +11,11 @@ def display_inventory(action):
 
 def add_to_inventory(inventory,added_items):
     ni = dragon_loot
-    for i in dragon_loot:
-        if KeyError:
-            inv[i] += 1
+    for k in dragon_loot:
+        if k in inv:
+            inv[k] +=1
         else:
-            inv.update({i:1})
+            inv.update({k:1})
        
         
 
@@ -28,9 +28,9 @@ def add_to_inventory(inventory,added_items):
 
 
 while True:
-    action = "A" #(input("what do you want to do? : "))
-    #if action == "C":
-     #   display_inventory(action)
+    action = (input("what do you want to do? : "))
+    if action == "C":
+        display_inventory(action)
     if action == "A":
         add_to_inventory(inv, dragon_loot)
     elif action == "t":
