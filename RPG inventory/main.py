@@ -38,7 +38,10 @@ def print_table():
             keyLength = len(str(k))
 
     keyLength = int(keyLength)
-    
+    dashes = keyLength*2 + valueLength*2 + 10
+
+    print(" "*10, "amount" + " "*keyLength + "items")
+    print("-"*dashes)
 
     for k, v in inv.items():
 
@@ -47,8 +50,9 @@ def print_table():
 
         frontspaces=(valueLength-a_v_len)
         spaces=(keyLength-a_k_len)
-        dashes = valueLength + keyLength + spaces + frontspaces + 10 + 5
+
         print(" "*10 ," "*frontspaces, v," "*5, " "*spaces, k)
+    print("-"*dashes)
         
     
 
