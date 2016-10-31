@@ -6,8 +6,15 @@ dragon_loot = ['gold coin', 'dagger', 'gold coin', 'gold coin', 'ruby']
 
 
 def display_inventory(action):
+    allItems = 0
     for k, v  in inv.items():
         print(v," ", k)
+        if allItems == 0:
+            allItems = v
+        else:
+            allItems = allItems + v
+        
+    print("total number of items: ", allItems)
 
 def add_to_inventory(inventory,added_items):
     ni = dragon_loot
