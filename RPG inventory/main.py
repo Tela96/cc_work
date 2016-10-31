@@ -17,7 +17,7 @@ def display_inventory(action):
     print("total number of items: ", allItems)
 
 def add_to_inventory(inventory,added_items):
-    ni = dragon_loot
+
     for k in dragon_loot:
         if k in inv:
             inv[k] +=1
