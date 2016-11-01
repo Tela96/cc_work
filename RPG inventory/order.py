@@ -3,6 +3,7 @@ from collections import OrderedDict
 
 
 def order_default(inv):
+
     keyLength = 0
     valueLength = 0
 
@@ -36,6 +37,7 @@ def order_sorted(inv):
 
     keyLength = 0
     valueLength = 0
+
     inv_1 = OrderedDict(sorted(inv.items(), key=lambda t:t[1], reverse=True))
 
     for k1, v1 in inv_1.items():
@@ -68,6 +70,7 @@ def order_reversed(inv):
 
     keyLength = 0
     valueLength = 0
+    
     inv_2 = OrderedDict(sorted(inv.items(), key=lambda t:t[1]))
     
     for k2, v2 in inv_2.items():
