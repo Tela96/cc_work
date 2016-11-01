@@ -46,7 +46,7 @@ def print_table(inventory):
 
     else:
         order_default(inv)
-        
+
 
 while True:
     action = "L" #(input("what do you want to do? : "))
@@ -61,6 +61,8 @@ while True:
         print_table(inv)
     elif action == "L":
         load_inventory('import_inventory.csv')
+        impinv ={}
+        impinv = load_inventory('import_inventory.csv')
         merge_imported_list(inv, impinv)
         inv = dict(mergedinv)
 
