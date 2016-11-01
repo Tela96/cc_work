@@ -3,14 +3,13 @@ from order import *
 
 
 inv = {'rope': 1, 'torch': 6, 'gold coin': 42, 'dagger': 1, 'arrow': 12}
-
 dragon_loot = ['gold coin', 'dagger', 'gold coin', 'gold coin', 'ruby', 'dragon meat']
 
 
 def display_inventory(action):
 
     allItems = 0
-    
+
     for k, v  in inv.items():
         print(v," ", k)
 
