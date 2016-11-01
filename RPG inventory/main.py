@@ -46,9 +46,7 @@ def print_table(inventory):
 
     else:
         order_default(inv)
-
-
-
+        
 
 while True:
     action = "L" #(input("what do you want to do? : "))
