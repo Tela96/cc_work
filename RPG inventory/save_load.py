@@ -10,3 +10,14 @@ def load_inventory(saveFile):
     for k, v in impinv.items():
         print(v, " ", k)
     file.close()
+    return impinv
+
+
+def merge_imported_list(main_inventory, imported_inventory):
+    mergedinv = dict(main_inventory)
+    importedinv = dict(imported_inventory)
+
+    for k, v in mergedinv():
+        if k in importedinv:
+            mergedinv[k] = mergedinv[k] + importedinv[k]
+    return mergedinv

@@ -51,7 +51,7 @@ def print_table(inventory):
 
 
 while True:
-    action = (input("what do you want to do? : "))
+    action = "L" #(input("what do you want to do? : "))
 
     if action == "C":
         display_inventory(action)
@@ -62,4 +62,7 @@ while True:
     elif action == "O":
         print_table(inv)
     elif action == "L":
-        load_inventory('import_inventory.csv')        
+        load_inventory('import_inventory.csv')
+        merge_imported_list(inv, impinv)
+        inv = dict(mergedinv)
+
