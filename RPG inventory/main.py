@@ -1,5 +1,9 @@
+global inv
 inv = {'rope': 1, 'torch': 6, 'gold coin': 42, 'dagger': 1, 'arrow': 12}
 dragon_loot = ['gold coin', 'dagger', 'gold coin', 'gold coin', 'ruby', 'dragon meat']
+import order
+from order import *
+
 
 
 
@@ -24,35 +28,18 @@ def add_to_inventory(inventory,added_items):
         else:
             inv.update({k:1})
        
-def print_table():
+def print_table(inventory):
+    sorting = input(str("how would you like your inventory? "))
+    if sorting == "Desc":
+        order_sorted(inv)
+    elif sorting == "Asc":
+        order_reversed(inv)
+    else:
+        order_default(inv)
 
-    keyLength = 0
-    valueLength = 0
 
-    for k, v in inv.items():
 
-        if valueLength < len(str(v)):
-            valueLength = len(str(v))
-
-        if keyLength < len(str(k)):
-            keyLength = len(str(k))
-
-    keyLength = int(keyLength)
-    dashes = keyLength*2 + valueLength*2 + 10
-
-    print(" "*10, "amount" + " "*keyLength + "items")
-    print("-"*dashes)
-
-    for k, v in inv.items():
-
-        a_v_len = (int(len(str(v))))
-        a_k_len = (int(len(str(k))))
-
-        frontspaces=(valueLength-a_v_len)
-        spaces=(keyLength-a_k_len)
-
-        print(" "*10 ," "*frontspaces, v," "*5, " "*spaces, k)
-    print("-"*dashes)
+    
         
     
 
@@ -86,5 +73,6 @@ while True:
     if action == "A":
         add_to_inventory(inv, dragon_loot)
     elif action == "O":
-        print_table()
+        
+        print_table(inv)
         
