@@ -64,5 +64,5 @@ while True:
         impinv ={}
         impinv = load_inventory('import_inventory.csv')
         merge_imported_list(inv, impinv)
-        inv = dict(mergedinv)
+        #inv = dict(mergedinv)
 

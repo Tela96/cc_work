@@ -20,5 +20,10 @@ def merge_imported_list(main_inventory, imported_inventory):
 
     for k in mergedinv.keys():
         if k in importedinv:
-            mergedinv[k] = mergedinv[k] + importedinv[k]
+            mergedinv[k] = int(mergedinv[k]) + int(importedinv[k])
+        else:
+            mergedinv.update({k:importedinv[k]})
+    
+    print(mergedinv)
     return mergedinv
+    
