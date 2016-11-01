@@ -1,5 +1,7 @@
 import order
 from order import *
+import save_load
+from save_load import *
 
 
 inv = {'rope': 1, 'torch': 6, 'gold coin': 42, 'dagger': 1, 'arrow': 12}
@@ -46,15 +48,18 @@ def print_table(inventory):
         order_default(inv)
 
 
+
+
 while True:
     action = (input("what do you want to do? : "))
 
     if action == "C":
         display_inventory(action)
 
-    if action == "A":
+    elif action == "A":
         add_to_inventory(inv, dragon_loot)
 
     elif action == "O":
         print_table(inv)
-        
+    elif action == "L":
+        load_inventory('import_inventory.csv')        
