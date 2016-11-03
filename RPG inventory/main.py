@@ -3,9 +3,12 @@ from order import *
 import save_load
 from save_load import *
 
-
+# initializing inventories
 inv = {'rope': 1, 'torch': 6, 'gold coin': 42, 'dagger': 1, 'arrow': 12}
 dragon_loot = ['gold coin', 'dagger', 'gold coin', 'gold coin', 'ruby', 'dragon meat']
+def controls():
+    print("You can execute functions with their uppercase first letters. C for checking the unformatted inventory, A for adding the dragon loot, I for importing the .csv file, S to save, L to load and after inputting O, you can either leave the next input empty, or input Asc or Desc. See the results for yourself")
+
 def allitems(inventory):
     
     allItems = 0
@@ -55,7 +58,7 @@ def print_table(inventory):
 
 while True:
 
-    action = (input("what do you want to do? : "))
+    action = (input("what do you want to do? (H for help) : "))
 
     if action == "C":
         display_inventory(action)
@@ -77,5 +80,8 @@ while True:
 
     elif action == "L":
         inv = load_inventory('Savegame.csv')
+    
+    elif action == "H":
+        controls()
     elif action == "Q":
         quit()
