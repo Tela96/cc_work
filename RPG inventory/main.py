@@ -20,6 +20,8 @@ def allitems(inventory):
             allItems = v
 
         else:
+            allItems = int(allItems)
+            v = int(v)
             allItems = allItems + v
     
     print("total number of items: ", allItems)
@@ -39,7 +41,7 @@ def add_to_inventory(inventory,added_items):
     for k in dragon_loot:
 
         if k in inv:
-            inv[k] +=1
+            inv[k] = int(inv[k]) + 1
 
         else:
             inv.update({k:1})
@@ -56,7 +58,7 @@ def print_table(inventory):
         order_reversed(inv)
 
     elif sorting == "B":
-        break
+        quit()
 
     else:
         order_default(inv)
