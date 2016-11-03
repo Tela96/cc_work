@@ -16,9 +16,9 @@ def display_inventory(action):
         print(v," ", k)
 
         if allItems == 0:
-            allItems = v
+            allItems = int(v)
         else:
-            allItems = allItems + v
+            allItems = allItems + int(v)
         
     print("total number of items: ", allItems)
 
@@ -49,7 +49,7 @@ def print_table(inventory):
 
 
 while True:
-    action = "L" #(input("what do you want to do? : "))
+    action = (input("what do you want to do? : "))
 
     if action == "C":
         display_inventory(action)
@@ -59,10 +59,8 @@ while True:
 
     elif action == "O":
         print_table(inv)
-    elif action == "L":
-        load_inventory('import_inventory.csv')
+    elif action == "I":
         impinv ={}
         impinv = load_inventory('import_inventory.csv')
-        merge_imported_list(inv, impinv)
+        inv = merge_imported_list(inv, impinv)
         #inv = dict(mergedinv)
-
