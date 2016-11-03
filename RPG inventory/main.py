@@ -15,7 +15,7 @@ def controls():
 def allitems(inventory):
     
     allItems = 0
-    for k, v in inv.items():
+    for v in inv.values():
         if allItems == 0:
             allItems = v
 
