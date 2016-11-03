@@ -1,6 +1,7 @@
 import collections
 from collections import OrderedDict
-
+import operator
+from operator import itemgetter
 
 
 def order_default(inv):
@@ -18,6 +19,7 @@ def order_default(inv):
 
     keyLength = int(keyLength)
     dashes = keyLength*2 + valueLength*2 + 10
+
     print(" "*10, "Your inventory")
     print(" "*10, "amount" + " "*keyLength + "items")
     print("-"*dashes)
@@ -31,6 +33,7 @@ def order_default(inv):
         spaces=(keyLength-a_k_len)
 
         print(" "*10 ," "*frontspaces, v," "*5, " "*spaces, k)
+
     print("-"*dashes)
 
 
@@ -39,7 +42,7 @@ def order_sorted(inv):
     keyLength = 0
     valueLength = 0
 
-    inv_1 = OrderedDict(sorted(inv.items(), key=lambda t:t[1], reverse=True))
+    inv_1 = OrderedDict(sorted(inv.items(), key = operator.itemgetter(1), reverse=True))
 
     for k1, v1 in inv_1.items():
 
@@ -51,6 +54,7 @@ def order_sorted(inv):
 
     keyLength = int(keyLength)
     dashes = keyLength*2 + valueLength*2 + 10
+
     print(" "*10, "Your inventory")
     print(" "*10, "amount" + " "*keyLength + "items")
     print("-"*dashes)
@@ -64,6 +68,7 @@ def order_sorted(inv):
         spaces=(keyLength-a_k_len)
 
         print(" "*10 ," "*frontspaces, v1," "*5, " "*spaces, k1)
+
     print("-"*dashes)
 
 
@@ -72,7 +77,7 @@ def order_reversed(inv):
     keyLength = 0
     valueLength = 0
     
-    inv_2 = OrderedDict(sorted(inv.items(), key=lambda t:t[1]))
+    inv_2 = OrderedDict(sorted(inv.items(), key = operator.itemgetter(1)))
     
     for k2, v2 in inv_2.items():
 
@@ -84,6 +89,7 @@ def order_reversed(inv):
 
     keyLength = int(keyLength)
     dashes = keyLength*2 + valueLength*2 + 10
+
     print(" "*10, "Your inventory")
     print(" "*10, "amount" + " "*keyLength + "items")
     print("-"*dashes)
@@ -97,4 +103,5 @@ def order_reversed(inv):
         spaces=(keyLength-a_k_len)
 
         print(" "*10 ," "*frontspaces, v2," "*5, " "*spaces, k2)
+        
     print("-"*dashes)
