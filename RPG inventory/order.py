@@ -2,6 +2,7 @@ import collections
 from collections import OrderedDict
 
 
+
 def order_default(inv):
 
     keyLength = 0
@@ -17,7 +18,7 @@ def order_default(inv):
 
     keyLength = int(keyLength)
     dashes = keyLength*2 + valueLength*2 + 10
-
+    print(" "*10, "Your inventory")
     print(" "*10, "amount" + " "*keyLength + "items")
     print("-"*dashes)
 
@@ -50,7 +51,7 @@ def order_sorted(inv):
 
     keyLength = int(keyLength)
     dashes = keyLength*2 + valueLength*2 + 10
-
+    print(" "*10, "Your inventory")
     print(" "*10, "amount" + " "*keyLength + "items")
     print("-"*dashes)
 
@@ -83,7 +84,7 @@ def order_reversed(inv):
 
     keyLength = int(keyLength)
     dashes = keyLength*2 + valueLength*2 + 10
-
+    print(" "*10, "Your inventory")
     print(" "*10, "amount" + " "*keyLength + "items")
     print("-"*dashes)
 

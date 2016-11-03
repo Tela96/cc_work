@@ -6,21 +6,26 @@ from save_load import *
 
 inv = {'rope': 1, 'torch': 6, 'gold coin': 42, 'dagger': 1, 'arrow': 12}
 dragon_loot = ['gold coin', 'dagger', 'gold coin', 'gold coin', 'ruby', 'dragon meat']
+def allitems(inventory):
+    
+    allItems = 0
+    for k, v in inv.items():
+        if allItems == 0:
+            allItems = v
 
+        else:
+            allItems = allItems + v
+    
+    print("total number of items: ", allItems)
 
 def display_inventory(action):
 
-    allItems = 0
 
     for k, v  in inv.items():
         print(v," ", k)
+    
+    allitems(inv)
 
-        if allItems == 0:
-            allItems = int(v)
-        else:
-            allItems = allItems + int(v)
-        
-    print("total number of items: ", allItems)
 
 
 def add_to_inventory(inventory,added_items):
@@ -49,6 +54,7 @@ def print_table(inventory):
 
 
 while True:
+
     action = (input("what do you want to do? : "))
 
     if action == "C":
@@ -59,8 +65,17 @@ while True:
 
     elif action == "O":
         print_table(inv)
+        allitems(inv)
+
     elif action == "I":
         impinv ={}
-        impinv = load_inventory('import_inventory.csv')
+        impinv = import_inventory('import_inventory.csv')
         inv = merge_imported_list(inv, impinv)
-        #inv = dict(mergedinv)
+
+    elif action == "S":
+        save_inventory(inv, 'Savegame.csv')
+
+    elif action == "L":
+        inv = load_inventory('Savegame.csv')
+    elif action == "Q":
+        quit()
