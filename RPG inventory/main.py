@@ -6,8 +6,11 @@ from save_load import *
 # initializing inventories
 inv = {'rope': 1, 'torch': 6, 'gold coin': 42, 'dagger': 1, 'arrow': 12}
 dragon_loot = ['gold coin', 'dagger', 'gold coin', 'gold coin', 'ruby', 'dragon meat']
+
+
 def controls():
     print("You can execute functions with their uppercase first letters. C for checking the unformatted inventory, A for adding the dragon loot, I for importing the .csv file, S to save, L to load and after inputting O, you can either leave the next input empty, or input Asc or Desc. See the results for yourself")
+
 
 def allitems(inventory):
     
@@ -21,6 +24,7 @@ def allitems(inventory):
     
     print("total number of items: ", allItems)
 
+
 def display_inventory(action):
 
 
@@ -28,7 +32,6 @@ def display_inventory(action):
         print(v," ", k)
     
     allitems(inv)
-
 
 
 def add_to_inventory(inventory,added_items):
@@ -51,6 +54,9 @@ def print_table(inventory):
 
     elif sorting == "Asc":
         order_reversed(inv)
+
+    elif sorting == "B":
+        break
 
     else:
         order_default(inv)
@@ -83,5 +89,6 @@ while True:
     
     elif action == "H":
         controls()
+
     elif action == "Q":
         quit()
