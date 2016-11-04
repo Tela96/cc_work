@@ -25,8 +25,10 @@ def merge_imported_list(main_inventory, imported_inventory):
 
         if k in mergedinv:
             mergedinv[k] = int(mergedinv[k]) + int(importedinv[k])
+            mergedinv[k] = int(mergedinv[k])
         else:
             mergedinv.update({k:importedinv[k]})
+
     print('Inventories merged')
     return mergedinv
 
@@ -38,7 +40,8 @@ def save_inventory(inventory, filename):
 
 
     writer.writerows(inventory.items())
-    file.close()
+
+    file.close()    
     print("Inventory state saved.")
 
 

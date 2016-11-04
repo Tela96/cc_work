@@ -25,6 +25,7 @@ def allitems(inventory):
             allItems = allItems + v
     
     print("total number of items: ", allItems)
+    print("")
 
 
 def display_inventory(action):
