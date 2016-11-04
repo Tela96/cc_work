@@ -33,7 +33,7 @@ def allitems(inventory):
     print("total number of items: ", allItems)
     print("")
 
-
+# just the basic, unformatted inventory display.
 def display_inventory(action):
 
     for k, v in inv.items():
@@ -41,7 +41,7 @@ def display_inventory(action):
 
     allitems(inv)
 
-
+#adds the dragon loot to the inventory.
 def add_to_inventory(inventory, added_items):
 
     for k in dragon_loot:
@@ -52,7 +52,7 @@ def add_to_inventory(inventory, added_items):
         else:
             inv.update({k: 1})
 
-
+#inventory sorting and printing, it's pretty!
 def print_table(inventory):
 
     sorting = input(str("how would you like your inventory? "))
@@ -69,7 +69,7 @@ def print_table(inventory):
     else:
         order_default(inv)
 
-
+#enter program
 while True:
 
     action = (input("what do you want to do? (H for help) : "))
