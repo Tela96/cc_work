@@ -85,10 +85,12 @@ while True:
         inv = merge_imported_list(inv, impinv)
 
     elif action == "S":
-        save_inventory(inv, 'Savegame.csv')
+        filename = input("Name your save file (include'.csv')")
+        save_inventory(inv, filename)
 
     elif action == "L":
-        inv = load_inventory('Savegame.csv')
+        filename = input("Name of save file? ")
+        inv = load_inventory(filename)
     
     elif action == "H":
         controls()

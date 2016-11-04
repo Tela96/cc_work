@@ -36,7 +36,6 @@ def order_default(inv):
         print(" "*10 ," "*frontspaces, v," "*5, " "*spaces, k)
 
     print("-"*dashes)
-    print("")
 
 
 def order_sorted(inv):
@@ -63,7 +62,6 @@ def order_sorted(inv):
     print("")
     print(" "*10, "Your inventory")
     print(" "*10, "amount" + " "*keyLength + "items")
-    print("-"*dashes)
 
     for k1, v1 in inv_1.items():
 
@@ -76,7 +74,6 @@ def order_sorted(inv):
         print(" "*10 ," "*frontspaces, v1," "*5, " "*spaces, k1)
 
     print("-"*dashes)
-    print("")
 
 def order_reversed(inv):
 
@@ -115,4 +112,3 @@ def order_reversed(inv):
         print(" "*10 ," "*frontspaces, v2," "*5, " "*spaces, k2)
         
     print("-"*dashes)
-    print("")

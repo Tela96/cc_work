@@ -1,4 +1,5 @@
 import csv
+import os.path
 
 def import_inventory(importFile):
 
@@ -46,17 +47,23 @@ def save_inventory(inventory, filename):
 
 
 def load_inventory(filename):
-
-    row = 0
-    loadinv= {}
-
-    file = open(filename, "r")
-    reader = csv.reader(file, quoting = csv.QUOTE_MINIMAL, doublequote = False)
-
-    loadinv=dict((row[0], row[1])for row in reader)
-
-    file.close()
-    print("Inventory state loaded.")
-    return loadinv
     
+    if os.path.isfile(filename):
+
+        row = 0
+        loadinv= {}
+
+        file = open(filename, "r")
+        reader = csv.reader(file, quoting = csv.QUOTE_MINIMAL, doublequote = False)
+
+        loadinv=dict((row[0], row[1])for row in reader)
+
+        file.close()
+        print("Inventory state loaded.")
+        return loadinv
+    
+    else:
+        print("No savefile is present with this name.")
+
+        
 
