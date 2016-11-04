@@ -5,13 +5,13 @@ import os.path
 def import_inventory(importFile):
 
     impinv = {}
-    row = 0
+    col = 0
 
     file = open(importFile, "r")
     reader = csv.reader(file, quoting=csv.QUOTE_MINIMAL, doublequote=False)
 
     next(reader, None)
-    impinv = dict((row[0], row[1])for row in reader)
+    impinv = dict((col[0], col[1])for col in reader)
 
     file.close()
 
