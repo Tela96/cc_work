@@ -18,24 +18,24 @@ def order_default(inv):
             keyLength = len(str(k))
 
     keyLength = int(keyLength)
-    dashes = keyLength*2 + valueLength*2 + 10
+    dashes = keyLength * 2 + valueLength * 2 + 10
 
     print("")
-    print(" "*10, "Your inventory")
-    print(" "*10, "amount" + " "*keyLength + "items")
-    print("-"*dashes)
+    print(" " * 10, "Your inventory")
+    print(" " * 10, "amount" + " " * keyLength + "items")
+    print("-" * dashes)
 
     for k, v in inv.items():
 
         a_v_len = (int(len(str(v))))
         a_k_len = (int(len(str(k))))
 
-        frontspaces=(valueLength-a_v_len)
-        spaces=(keyLength-a_k_len)
+        frontspaces = (valueLength - a_v_len)
+        spaces = (keyLength - a_k_len)
 
-        print(" "*10 ," "*frontspaces, v," "*5, " "*spaces, k)
+        print(" " * 10, " " * frontspaces, v, " " * 5, " " * spaces, k)
 
-    print("-"*dashes)
+    print("-" * dashes)
 
 
 def order_sorted(inv):
@@ -46,7 +46,7 @@ def order_sorted(inv):
     for k in inv.keys():
         inv[k] = int(inv[k])
 
-    inv_1 = OrderedDict(sorted(inv.items(), key=lambda t:t[1], reverse=True))
+    inv_1 = OrderedDict(sorted(inv.items(), key=lambda t: t[1], reverse=True))
 
     for k1, v1 in inv_1.items():
 
@@ -57,23 +57,24 @@ def order_sorted(inv):
             keyLength = len(str(k1))
 
     keyLength = int(keyLength)
-    dashes = keyLength*2 + valueLength*2 + 10
+    dashes = keyLength * 2 + valueLength * 2 + 10
 
     print("")
-    print(" "*10, "Your inventory")
-    print(" "*10, "amount" + " "*keyLength + "items")
+    print(" " * 10, "Your inventory")
+    print(" " * 10, "amount" + " " * keyLength + "items")
 
     for k1, v1 in inv_1.items():
 
         a_v_len = (int(len(str(v1))))
         a_k_len = (int(len(str(k1))))
 
-        frontspaces=(valueLength-a_v_len)
-        spaces=(keyLength-a_k_len)
+        frontspaces = (valueLength - a_v_len)
+        spaces = (keyLength - a_k_len)
 
-        print(" "*10 ," "*frontspaces, v1," "*5, " "*spaces, k1)
+        print(" " * 10, " " * frontspaces, v1, " " * 5, " " * spaces, k1)
 
-    print("-"*dashes)
+    print("-" * dashes)
+
 
 def order_reversed(inv):
 
@@ -82,9 +83,9 @@ def order_reversed(inv):
 
     for k in inv.keys():
         inv[k] = int(inv[k])
-    
-    inv_2 = OrderedDict(sorted(inv.items(), key=lambda t:t[1]))
-    
+
+    inv_2 = OrderedDict(sorted(inv.items(), key=lambda t: t[1]))
+
     for k2, v2 in inv_2.items():
 
         if valueLength < len(str(v2)):
@@ -94,21 +95,21 @@ def order_reversed(inv):
             keyLength = len(str(k2))
 
     keyLength = int(keyLength)
-    dashes = keyLength*2 + valueLength*2 + 10
+    dashes = keyLength * 2 + valueLength * 2 + 10
 
     print("")
-    print(" "*10, "Your inventory")
-    print(" "*10, "amount" + " "*keyLength + "items")
-    print("-"*dashes)
+    print(" " * 10, "Your inventory")
+    print(" " * 10, "amount" + " " * keyLength + "items")
+    print("-" * dashes)
 
     for k2, v2 in inv_2.items():
 
         a_v_len = (int(len(str(v2))))
         a_k_len = (int(len(str(k2))))
 
-        frontspaces=(valueLength-a_v_len)
-        spaces=(keyLength-a_k_len)
+        frontspaces = (valueLength - a_v_len)
+        spaces = (keyLength - a_k_len)
 
-        print(" "*10 ," "*frontspaces, v2," "*5, " "*spaces, k2)
-        
-    print("-"*dashes)
+        print(" " * 10, " " * frontspaces, v2, " " * 5, " " * spaces, k2)
+
+    print("-" * dashes)

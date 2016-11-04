@@ -5,7 +5,13 @@ from save_load import *
 
 # initializing inventories
 inv = {'rope': 1, 'torch': 6, 'gold coin': 42, 'dagger': 1, 'arrow': 12}
-dragon_loot = ['gold coin', 'dagger', 'gold coin', 'gold coin', 'ruby', 'dragon meat']
+dragon_loot = [
+    'gold coin',
+    'dagger',
+    'gold coin',
+    'gold coin',
+    'ruby',
+    'dragon meat']
 
 
 def controls():
@@ -13,7 +19,7 @@ def controls():
 
 
 def allitems(inventory):
-    
+
     allItems = 0
     for v in inv.values():
         if allItems == 0:
@@ -23,21 +29,20 @@ def allitems(inventory):
             allItems = int(allItems)
             v = int(v)
             allItems = allItems + v
-    
+
     print("total number of items: ", allItems)
     print("")
 
 
 def display_inventory(action):
 
+    for k, v in inv.items():
+        print(v, " ", k)
 
-    for k, v  in inv.items():
-        print(v," ", k)
-    
     allitems(inv)
 
 
-def add_to_inventory(inventory,added_items):
+def add_to_inventory(inventory, added_items):
 
     for k in dragon_loot:
 
@@ -45,9 +50,9 @@ def add_to_inventory(inventory,added_items):
             inv[k] = int(inv[k]) + 1
 
         else:
-            inv.update({k:1})
+            inv.update({k: 1})
 
-       
+
 def print_table(inventory):
 
     sorting = input(str("how would you like your inventory? "))
@@ -80,7 +85,7 @@ while True:
         allitems(inv)
 
     elif action == "I":
-        impinv ={}
+        impinv = {}
         impinv = import_inventory('import_inventory.csv')
         inv = merge_imported_list(inv, impinv)
 
@@ -91,7 +96,7 @@ while True:
     elif action == "L":
         filename = input("Name of save file? ")
         inv = load_inventory(filename)
-    
+
     elif action == "H":
         controls()
 
