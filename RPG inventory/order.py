@@ -62,6 +62,7 @@ def order_sorted(inv):
     print("")
     print(" " * 10, "Your inventory")
     print(" " * 10, "amount" + " " * keyLength + "items")
+    print("-" * dashes)
 
     for k1, v1 in inv_1.items():
 
