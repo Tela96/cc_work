@@ -34,6 +34,8 @@ def allitems(inventory):
     print("")
 
 # just the basic, unformatted inventory display.
+
+
 def display_inventory(action):
 
     for k, v in inv.items():
@@ -41,7 +43,9 @@ def display_inventory(action):
 
     allitems(inv)
 
-#adds the dragon loot to the inventory.
+# adds the dragon loot to the inventory.
+
+
 def add_to_inventory(inventory, added_items):
 
     for k in dragon_loot:
@@ -52,7 +56,9 @@ def add_to_inventory(inventory, added_items):
         else:
             inv.update({k: 1})
 
-#inventory sorting and printing, it's pretty!
+# inventory sorting and printing, it's pretty!
+
+
 def print_table(inventory):
 
     sorting = input(str("how would you like your inventory? "))
@@ -69,7 +75,7 @@ def print_table(inventory):
     else:
         order_default(inv)
 
-#enter program
+# enter program
 while True:
 
     action = (input("what do you want to do? (H for help) : "))
@@ -91,11 +97,19 @@ while True:
 
     elif action == "S":
         filename = input("Name your save file (include'.csv')")
-        save_inventory(inv, filename)
+        if len(filename) > 1:
+            save_inventory(inv, filename)
+        else:
+            filename = ("export_inventory.csv")
+            save_inventory(inv, filename)
 
     elif action == "L":
         filename = input("Name of save file? ")
-        inv = load_inventory(filename)
+        if len(filename) > 1:
+            inv = load_inventory(filename)
+        else:
+            filename = ("export_inventory.csv")
+            inv = load_inventory(filename)
 
     elif action == "H":
         controls()
